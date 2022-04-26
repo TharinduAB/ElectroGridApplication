@@ -16,13 +16,13 @@ import org.jsoup.nodes.Document;
 
 public class BillPayService {
  
-	Billpay itemObj = new Billpay(); 
+	Billpay paymentObj = new Billpay(); 
 	@GET
 	@Path("/") 
 	@Produces(MediaType.TEXT_HTML) 
 	public String readItems() 
 	 { 
-		return itemObj.readPaymentData(); 
+		return paymentObj.readPaymentData(); 
 	 } 
 	
 	//---------------------------------------------------------------------------------------
@@ -37,7 +37,7 @@ public class BillPayService {
 	 @FormParam("cardID") String cardID, 
 	@FormParam("Amount") String Amount)
 	{ 
-	 String output = itemObj.insertPayMentdata(billID, customerName, Month, cardID,Amount); 
+	 String output = paymentObj.insertPayMentdata(billID, customerName, Month, cardID,Amount); 
 	return output; 
 	}
 }

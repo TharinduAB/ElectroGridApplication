@@ -103,7 +103,7 @@ public class Billpay {
 		 } 
 		 catch (Exception e) 
 		 { 
-		 output = "Error while inserting the carddata."; 
+		 output = "Error while inserting the paymentdata."; 
 		 System.err.println(e.getMessage()); 
 		 } 
 		 return output; 

@@ -12,16 +12,6 @@
  		<url-pattern>/StationService/*</url-pattern>
 	</servlet-mapping>
 	
-	<servlet>
- 		<servlet-name>Payment Application</servlet-name>
-		 <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
- 		<load-on-startup>1</load-on-startup>
-	</servlet>
-	<servlet-mapping>
- 		<servlet-name>Payment Application</servlet-name>
- 		<url-pattern>/Service/*</url-pattern>
-	</servlet-mapping>
-	
 	
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>

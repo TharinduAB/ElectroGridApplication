@@ -85,7 +85,7 @@ public class Inquiry
 			 Statement stmt = con.createStatement();
 			 ResultSet rs = stmt.executeQuery(query);
 			 
-			 // iterate through the rows in the result sets
+			 // iterate through the rows in the result set
 			 while (rs.next())
 			 {
 				 String inquiryID = Integer.toString(rs.getInt("inquiryID"));

@@ -13,7 +13,7 @@ public class User {
 				Class.forName("com.mysql.jdbc.Driver"); 
  
 				//Provide the correct details: DBServer/DBName, username, password 
-				con = DriverManager.getConnection("jdbc:mysql://localhost:3306/electro_grid", "root", "root"); 
+				con = DriverManager.getConnection("jdbc:mysql://localhost:3306/electrogrid", "root", ""); 
 	} 
 			catch (Exception e) 
 			{e.printStackTrace();} 

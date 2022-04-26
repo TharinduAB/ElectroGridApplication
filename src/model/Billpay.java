@@ -17,7 +17,7 @@ public class Billpay {
 				Class.forName("com.mysql.jdbc.Driver"); 
  
 				//Provide  correct details: DBServer/DBName, username, password 
-				con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Grid", "root", ""); 
+				con = DriverManager.getConnection("jdbc:mysql://localhost:3306/electrogrid", "root", ""); 
 	} 
 			catch (Exception e) 
 			{e.printStackTrace();} 

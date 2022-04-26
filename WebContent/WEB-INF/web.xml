@@ -19,6 +19,44 @@
  		<servlet-name>Jersey Web Application</servlet-name>
  		<url-pattern>/InquiryService/*</url-pattern>
 	</servlet-mapping>
+	<servlet>
+ 		<servlet-name>Payment</servlet-name>
+ 		<servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+ 		<load-on-startup>2</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+ 		<servlet-name>Payment</servlet-name>
+ 		<url-pattern>/PaymentService/*</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>Information Application</servlet-name>
+		<servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+		<load-on-startup>3</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Information Application</servlet-name>
+		<url-pattern>/InformationService/*</url-pattern>
+	</servlet-mapping>
+	<servlet>
+ 		<servlet-name>User Application</servlet-name>
+ 		<servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer 
+ 		</servlet-class>
+ 		<load-on-startup>4</load-on-startup>
+ 	</servlet>
+	<servlet-mapping>
+ 		<servlet-name>User Application</servlet-name>
+ 		<url-pattern>/UserService/*</url-pattern>
+	</servlet-mapping>
+	<servlet>
+ 		<servlet-name>Bill Application</servlet-name>
+ 		<servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+ 		<load-on-startup>0</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+ 		<servlet-name>Bill Application</servlet-name>
+ 		<url-pattern>/Service/*</url-pattern>
+	</servlet-mapping> 
+
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.htm</welcome-file>

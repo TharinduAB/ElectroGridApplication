@@ -16,10 +16,10 @@ import org.jsoup.nodes.Document;
 
 public class BillPayService {
  
-	Billpay billObj = new Billpay(); 
-	@GET
-	@Path("/") 
-	@Produces(MediaType.TEXT_HTML) 
+		Billpay billObj = new Billpay(); 
+		@GET
+		@Path("/") 
+		@Produces(MediaType.TEXT_HTML) 
 	public String readItems() 
 	 { 
 		return billObj.readPaymentData(); 
@@ -27,17 +27,17 @@ public class BillPayService {
 	
 	//---------------------------------------------------------------------------------------
 
-	@POST
-	@Path("/") 
-	@Consumes(MediaType.APPLICATION_FORM_URLENCODED) 
-	@Produces(MediaType.TEXT_PLAIN) 
+		@POST
+		@Path("/") 
+		@Consumes(MediaType.APPLICATION_FORM_URLENCODED) 
+		@Produces(MediaType.TEXT_PLAIN) 
 	public String insertPayMent(@FormParam("billID") String billID, 
-	 @FormParam("customerName") String customerName, 
-	 @FormParam("Month") String Month, 
-	 @FormParam("cardID") String cardID, 
-	@FormParam("Amount") String Amount)
+			@FormParam("customerName") String customerName, 
+			@FormParam("Month") String Month, 
+			@FormParam("cardID") String cardID, 
+			@FormParam("Amount") String Amount)
 	{ 
-	 String output = billObj.insertPayMentdata(billID, customerName, Month, cardID,Amount); 
+			String output = billObj.insertPayMentdata(billID, customerName, Month, cardID,Amount); 
 	return output; 
 	}
 }

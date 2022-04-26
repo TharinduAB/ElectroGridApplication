@@ -29,38 +29,38 @@ public class Billpay {
 	//-------------------------------------------------------------------------
 	
 	public String readPaymentData() 
-	 { 
-	 String output = ""; 
-	 try
-	 { 
+		{ 
+			String output = ""; 
+			try
+		{ 
 	 Connection con = connect(); 
-	 if (con == null) 
-	 {return "Error while connecting to the database for reading."; } 
-	 // Prepare the html table to be displayed
-	 output = "<table border='1'><tr><th>Bill No</th><th>Customer Name</th><th>Month</th>" + "<th>Card ID</th>" +
-	 "<th>Amount</th>" ; 
+	 		if (con == null) 
+	 			{return "Error while connecting to the database for reading."; } 
+	 			// Prepare the html table to be displayed
+	 			output = "<table border='1'><tr><th>Bill No</th><th>Customer Name</th><th>Month</th>" + "<th>Card ID</th>" +
+	 					"<th>Amount</th>" ; 
 	 
-	 String query = "select * from payment"; 
-	 Statement stmt = con.createStatement(); 
-	 ResultSet rs = stmt.executeQuery(query); 
-	 // iterate through the rows in the result set
-	 while (rs.next()) 
-	 { 
-	 String pymntID = Integer.toString(rs.getInt("pymntID")); 
-	 String billID = rs.getString("billID"); 
-	 String customerName = rs.getString("customerName"); 
-	 String Month = rs.getString("Month"); 
-	 String cardID = rs.getString("cardID"); 
-	 //String Amount = rs.getString("Amount");
-	 String Amount = Double.toString(rs.getDouble("Amount"));
+	 			String query = "select * from payment"; 
+	 			Statement stmt = con.createStatement(); 
+	 			ResultSet rs = stmt.executeQuery(query); 
+	 			// iterate through the rows in the result set
+	 		while (rs.next()) 
+	 		{ 
+	 			String pymntID = Integer.toString(rs.getInt("pymntID")); 
+	 			String billID = rs.getString("billID"); 
+	 			String customerName = rs.getString("customerName"); 
+	 			String Month = rs.getString("Month"); 
+	 			String cardID = rs.getString("cardID"); 
+	 			//String Amount = rs.getString("Amount");
+	 			String Amount = Double.toString(rs.getDouble("Amount"));
 	 
-	 // Add into the html table
-	 output += "<tr>  <td>" + billID + "</td>"; 
-	 output += "<td>" + customerName + "</td>"; 
-	 output += "<td>" + Month + "</td>"; 
-	 output += "<td>" + cardID + "</td>"; 
-	 output += "<td>" + Amount + "</td>";
-	 // buttons + "</form></td></tr>"; 
+	 			// Add into the html table
+	 			output += "<tr>  <td>" + billID + "</td>"; 
+	 			output += "<td>" + customerName + "</td>"; 
+	 			output += "<td>" + Month + "</td>"; 
+	 			output += "<td>" + cardID + "</td>"; 
+	 			output += "<td>" + Amount + "</td>";
+	 			// buttons + "</form></td></tr>"; 
 	 } 
 	 con.close(); 
 	 // Complete the html table

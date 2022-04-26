@@ -15,13 +15,13 @@ import org.jsoup.nodes.Document;
  
 public class CardtService 
 { 
-Card itemObj = new Card(); 
+Card cardObj = new Card(); 
 @GET
 @Path("/") 
 @Produces(MediaType.TEXT_HTML) 
-public String readItems() 
+public String readcard() 
  { 
-	return itemObj.readCardData(); 
+	return cardObj.readCardData(); 
  } 
 
 @POST
@@ -34,7 +34,7 @@ public String insertCardData(@FormParam("cardHolderName") String cardHolderName,
  @FormParam("Year") String Year, 
 @FormParam("ccvNo") String ccvNo)
 { 
- String output = itemObj.insertCardData(cardHolderName, cardNo, Month, Year,ccvNo); 
+ String output = cardObj.insertCardData(cardHolderName, cardNo, Month, Year,ccvNo); 
 return output; 
 }
 
@@ -42,18 +42,18 @@ return output;
 @Path("/") 
 @Consumes(MediaType.APPLICATION_JSON) 
 @Produces(MediaType.TEXT_PLAIN) 
-public String updateCard(String itemData) 
+public String updateCard(String cardData) 
 { 
 //Convert the input string to a JSON object 
- JsonObject itemObject = new JsonParser().parse(itemData).getAsJsonObject(); 
+ JsonObject cardObject = new JsonParser().parse(cardData).getAsJsonObject(); 
 //Read the values from the JSON object
- String cardID = itemObject.get("cardID").getAsString(); 
- String cardHolderName = itemObject.get("cardHolderName").getAsString(); 
- String cardNo = itemObject.get("cardNo").getAsString(); 
- String Month = itemObject.get("Month").getAsString(); 
- String Year = itemObject.get("Year").getAsString();
- String ccvNo = itemObject.get("ccvNo").getAsString(); 
- String output = itemObj.updateCard(cardID, cardHolderName, cardNo, Month, Year,ccvNo); 
+ String cardID = cardObject.get("cardID").getAsString(); 
+ String cardHolderName = cardObject.get("cardHolderName").getAsString(); 
+ String cardNo = cardObject.get("cardNo").getAsString(); 
+ String Month = cardObject.get("Month").getAsString(); 
+ String Year = cardObject.get("Year").getAsString();
+ String ccvNo = cardObject.get("ccvNo").getAsString(); 
+ String output = cardObj.updateCard(cardID, cardHolderName, cardNo, Month, Year,ccvNo); 
 return output; 
 }
 
@@ -68,7 +68,7 @@ public String deleteCard(String itemData)
  
 //Read the value from 
  String cardID = doc.select("cardID").text(); 
- String output = itemObj.deleteCard(cardID); 
+ String output = cardObj.deleteCard(cardID); 
 return output; 
 }
 

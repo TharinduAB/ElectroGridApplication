@@ -37,7 +37,7 @@ public class Billpay {
 	 if (con == null) 
 	 {return "Error while connecting to the database for reading."; } 
 	 // Prepare the html table to be displayed
-	 output = "<table border='1'><tr><th>Bill ID</th><th>Customer Name</th><th>Month</th>" + "<th>Card ID</th>" +
+	 output = "<table border='1'><tr><th>Bill No</th><th>Customer Name</th><th>Month</th>" + "<th>Card ID</th>" +
 	 "<th>Amount</th>" ; 
 	 
 	 String query = "select * from payment"; 

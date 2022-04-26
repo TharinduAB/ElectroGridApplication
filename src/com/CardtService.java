@@ -42,10 +42,10 @@ return output;
 @Path("/") 
 @Consumes(MediaType.APPLICATION_JSON) 
 @Produces(MediaType.TEXT_PLAIN) 
-public String updateCard(String itemData) 
+public String updateCard(String CardData) 
 { 
 //Convert the input string to a JSON object 
- JsonObject cardObject = new JsonParser().parse(itemData).getAsJsonObject(); 
+ JsonObject cardObject = new JsonParser().parse(CardData).getAsJsonObject(); 
 //Read the values from the JSON object
  String cardID = cardObject.get("cardID").getAsString(); 
  String cardHolderName = cardObject.get("cardHolderName").getAsString(); 

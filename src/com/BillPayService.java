@@ -20,7 +20,7 @@ public class BillPayService {
 	@GET
 	@Path("/") 
 	@Produces(MediaType.TEXT_HTML) 
-	public String readItems() 
+	public String readPayment() 
 	 { 
 		return paymentObj.readPaymentData(); 
 	 } 
